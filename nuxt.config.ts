@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  css: ['~/assets/css/main.css'],
   devtools: { 
     enabled: true 
   },
@@ -14,13 +15,19 @@ export default defineNuxtConfig({
 
     moduleOptions: {
       /* nuxt-vuetify module options */
-      treeshaking: true,
-      useIconCDN: true ,
+      treeshaking: true ,
+      useIconCDN: true,
 
       /* vite-plugin-vuetify options */
-      styles: 'sass',
+      styles: "sass",
       autoImport: true,
       useVuetifyLabs: true, 
     }
-  }
+  },
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 })
